@@ -16,8 +16,8 @@ export default {
         primary: "#1c1c22",
         secondary: "#DDEDAA",
         accent: {
-          DEFAULT: "#00e187",
-          hover: "#00ff99",
+          DEFAULT: "#00c170",
+          hover: "#00eb96",
         },
         background: "var(--background)",
         foreground: "var(--foreground)",
