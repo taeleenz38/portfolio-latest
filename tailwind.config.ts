@@ -13,7 +13,7 @@ export default {
     },
     extend: {
       colors: {
-        primary: "#1c1c22",
+        primary: "#131313",
         secondary: "#DDEDAA",
         accent: {
           DEFAULT: "rgba(0, 193, 112, 0.6)",
