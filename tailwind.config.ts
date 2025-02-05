@@ -16,7 +16,7 @@ export default {
         primary: "#1c1c22",
         secondary: "#DDEDAA",
         accent: {
-          DEFAULT: "rgba(0, 193, 112, 0.8)",
+          DEFAULT: "rgba(0, 193, 112, 0.6)",
           hover: "#00eb96",
         },
         background: "var(--background)",

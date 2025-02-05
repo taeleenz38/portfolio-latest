@@ -19,9 +19,9 @@ const Navbar: React.FC = () => {
     const handleScroll = () => {
       const scrollTop =
         window.pageYOffset || document.documentElement.scrollTop;
-      if (scrollTop > lastScrollTop && scrollTop > 100) {
+      if (scrollTop > lastScrollTop && scrollTop > 5) {
         setIsHidden(true);
-      } else if (scrollTop < lastScrollTop || scrollTop <= 100) {
+      } else if (scrollTop < lastScrollTop || scrollTop <= 5) {
         setIsHidden(false);
       }
       // Add shadow when scrolled down even by 1 pixel
@@ -58,9 +58,9 @@ const Navbar: React.FC = () => {
           elementsVisible[0]
             ? "translate-y-0 opacity-100"
             : "translate-y-[-30px] opacity-0"
-        } transition-all duration-250`}
+        } transition-all duration-250 text-2xl font-bold text-white`}
       >
-        LOGO
+        TAE LEE
       </div>
       <div className="flex items-center gap-10 text-sm">
         <a
