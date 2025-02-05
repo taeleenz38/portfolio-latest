@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
+import Image from "next/image";
 
 const Navbar: React.FC = () => {
   const [isHidden, setIsHidden] = useState<boolean>(false);
@@ -46,22 +47,34 @@ const Navbar: React.FC = () => {
     });
   }, []);
 
+  const handleScrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault(); // Prevent the default anchor behavior
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div
       ref={navRef}
-      className={`fixed top-0 left-0 w-full z-50 bg-primary flex justify-between items-center py-8 px-12 text-accent transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full z-50 bg-primary flex justify-between items-center py-4 px-12 text-accent transition-all duration-300 ${
         isHidden ? "translate-y-[-100%] opacity-0" : "translate-y-0 opacity-100"
       } ${hasShadow ? "shadow-md shadow-white" : ""}`}
     >
-      <div
-        className={`${
-          elementsVisible[0]
-            ? "translate-y-0 opacity-100"
-            : "translate-y-[-30px] opacity-0"
-        } transition-all duration-250 text-2xl font-bold text-white`}
-      >
-        TAE LEE
-      </div>
+      <a href="/" onClick={handleScrollToTop}>
+        <Image
+          src="/images/LOGO.svg"
+          width={75}
+          height={75}
+          alt="logo"
+          className={`${
+            elementsVisible[0]
+              ? "translate-y-0 opacity-100"
+              : "translate-y-[-30px] opacity-0"
+          } transition-all duration-250 text-2xl font-bold text-white hover:cursor-pointer`}
+        />
+      </a>
       <div className="flex items-center gap-10 text-sm">
         <a
           href=""
