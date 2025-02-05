@@ -59,9 +59,10 @@ const Landing = () => {
               : "translate-y-[50px] opacity-0"
           } transition-all duration-500`}
         >
-          I&apos;m a software engineer who excels in developing (and occasionally
-          designing) extraordinary digital experiences. Currently, I&apos;m focused
-          on building accessible, human-centered blockchain solutions at{" "}
+          I&apos;m a software engineer who excels in developing (and
+          occasionally designing) extraordinary digital experiences. Currently,
+          I&apos;m focused on building accessible, human-centered blockchain
+          solutions at {" "}
           <a
             href="https://blockmajority.io/"
             target="_blank"

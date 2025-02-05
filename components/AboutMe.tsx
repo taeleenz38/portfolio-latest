@@ -8,7 +8,7 @@ const AboutMe = () => {
         <h1 className="w-full flex text-2xl items-end gap-4">
           01.
           <span className="text-accent-hover text-3xl flex items-center gap-2 font-bold">
-            About Me <p className="w-[275px] h-[2px] bg-accent"></p>
+            About Me <p className="w-[350px] h-[2px] bg-accent"></p>
           </span>
         </h1>
         <div className="w-full flex justify-between">
@@ -38,7 +38,9 @@ const AboutMe = () => {
               </a>{" "}
               for a variety of clients.
             </p>
-            <p className="font-extrabold mb-2 text-accent-hover">Technologies / Tech Stack</p>
+            <p className="font-extrabold mb-2 text-accent-hover">
+              Technologies / Tech Stack
+            </p>
             <div className="grid grid-cols-3 text-sm font-light">
               <ul className="">
                 <li className="mb-2">JavaScript (ES6+)</li>
@@ -63,7 +65,11 @@ const AboutMe = () => {
               width={350}
               height={350}
               alt="profile picture"
-              className="grayscale group-hover:grayscale-0 transition-all duration-200"
+              className="group-hover:brightness-80 transition-all duration-200"
+              style={{
+                filter:
+                  "brightness(0.6) sepia(1) hue-rotate(130deg) saturate(4)",
+              }}
             />
           </div>
         </div>
