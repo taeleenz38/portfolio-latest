@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Navbar: React.FC = () => {
   const [isHidden, setIsHidden] = useState<boolean>(false);
@@ -62,7 +63,7 @@ const Navbar: React.FC = () => {
         isHidden ? "translate-y-[-100%] opacity-0" : "translate-y-0 opacity-100"
       } ${hasShadow ? "shadow-md shadow-white" : ""}`}
     >
-      <a href="/" onClick={handleScrollToTop}>
+      <Link href="/" onClick={handleScrollToTop}>
         <Image
           src="/images/LOGO.svg"
           width={75}
@@ -74,7 +75,7 @@ const Navbar: React.FC = () => {
               : "translate-y-[-30px] opacity-0"
           } transition-all duration-250 text-2xl font-bold text-white hover:cursor-pointer`}
         />
-      </a>
+      </Link>
       <div className="flex items-center gap-10 text-sm">
         <a
           href=""

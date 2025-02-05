@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 
 const WorkHistory = () => {
   const ref1 = useRef(null);
