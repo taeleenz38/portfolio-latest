@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   body {
     @apply font-primary bg-primary text-white leading-loose;
@@ -10,5 +9,26 @@
 
   :root {
     --radius: 0.5rem;
+  }
+}
+
+@layer components {
+  .link-underline-grow {
+    @apply relative inline-block;
+  }
+
+  .link-underline-grow::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 5px;
+    left: 0;
+    background-color: white; /* or any color you want for the underline */
+    transition: width 0.3s ease-out;
+  }
+
+  .link-underline-grow:hover::after {
+    width: 100%;
   }
 }

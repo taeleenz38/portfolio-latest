@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${lato.variable} antialiased`}>
+      <body className={`${lato.variable} antialiased font-medium overflow-x-hidden`}>
         <Navbar />
         {children}
       </body>
