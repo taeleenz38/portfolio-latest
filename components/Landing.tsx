@@ -53,7 +53,7 @@ const Landing = () => {
           I Craft Web Experiences.
         </h1>
         <p
-          className={`w-2/3 text-accent font-medium ${
+          className={`w-3/5 text-accent font-medium ${
             elementsVisible[3]
               ? "translate-y-0 opacity-100"
               : "translate-y-[50px] opacity-0"
