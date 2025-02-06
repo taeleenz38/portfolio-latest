@@ -19,21 +19,21 @@ const AboutMe = () => {
 
   return (
     <div id="about" className="w-screen h-screen flex justify-center items-center">
-      <div className="w-[900px] flex flex-col mx-auto gap-8">
-        <h1 className="w-full flex text-2xl items-end gap-4">
+      <div className="w-[320px] sm:w-[500px] md:w-[900px] flex flex-col mx-auto gap-4 sm:gap-8">
+        <h1 className="w-full flex text-lg md:text-2xl items-end gap-4">
           01.
-          <span className="text-accent-hover text-3xl flex items-center gap-2 font-bold">
-            About Me <p className="w-[285px] h-[2px] bg-accent"></p>
+          <span className="text-accent-hover text-xl md:text-3xl flex items-center gap-2 font-bold">
+            About Me <p className="w-[0px] sm:w-[275px] h-[2px] bg-accent"></p>
           </span>
         </h1>
-        <div className="w-full flex justify-between">
-          <div className="w-[53%] flex-col text-accent">
+        <div className="w-full flex flex-col-reverse md:flex-row md:justify-between">
+          <div className="w-[300px] sm:w-[400px] mx-auto md:mx-0 mt-4 md:mt-0 md:w-[53%] flex-col text-accent">
             <motion.p
               ref={ref1}
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: isInView1 ? 1 : 0, y: isInView1 ? 0 : 50 }}
               transition={{ duration: 0.5 }}
-              className="mb-4"
+              className="mb-4 hidden md:block"
             >
               Hi, I&apos;m Tae and I specialize in crafting user-centered
               websites with a focus on clean UX/UI. My journey into web
@@ -45,7 +45,7 @@ const AboutMe = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: isInView2 ? 1 : 0, y: isInView2 ? 0 : 50 }}
               transition={{ duration: 0.5 }}
-              className="mb-4"
+              className="mb-4 hidden md:block"
             >
               By 2021, my curiosity had shifted towards the Web3 landscape,
               exploring everything from NFTs to the wild world of memecoins.
@@ -58,7 +58,7 @@ const AboutMe = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: isInView3 ? 1 : 0, y: isInView3 ? 0 : 50 }}
               transition={{ duration: 0.5 }}
-              className="mb-4"
+              className="mb-4 text-sm sm:text-lg"
             >
               My main focus these days is building blockchain solutions with
               sleek UX/UI at{" "}
@@ -109,7 +109,7 @@ const AboutMe = () => {
               </ul>
             </motion.div>
           </div>
-          <div className="w-[38%] mt-2 h-fit rounded-md overflow-hidden hover:translate-x-[-6px] hover:translate-y-[-6px] hover:shadow-[6px_6px_0px_rgba(255,255,255)] duration-200 group">
+          <div className="sm:w-[350px] md:w-[38%] mx-auto md:mx-0 mt-1 h-fit rounded-md overflow-hidden hover:translate-x-[-6px] hover:translate-y-[-6px] hover:shadow-[6px_6px_0px_rgba(255,255,255)] duration-200 group">
             <Image
               src="/images/IMG_6593.JPG"
               width={350}

@@ -87,6 +87,7 @@ const Navbar: React.FC = () => {
           } transition-all duration-250 text-2xl font-bold text-white hover:cursor-pointer`}
         />
       </Link>
+
       <div className="flex items-center gap-10 text-sm">
         {["#about", "#experience", "#projects", "#contact"].map(
           (href, index) => (
@@ -101,7 +102,7 @@ const Navbar: React.FC = () => {
               } transition-all duration-200`}
             >
               <span className="text-white">{`0${index + 1}.`}</span>{" "}
-              {href.slice(1).charAt(0).toUpperCase() + href.slice(2)}
+              <span className="hidden sm:block">{href.slice(1).charAt(0).toUpperCase() + href.slice(2)}</span>
             </a>
           )
         )}
@@ -112,7 +113,7 @@ const Navbar: React.FC = () => {
               "_blank"
             )
           }
-          className={`text-white font-medium border-white border-[1px] rounded-md px-4 py-2 hover:translate-x-[-3px] hover:translate-y-[-3px] hover:shadow-[3px_3px_0px_rgba(255,255,255)] duration-200 ${
+          className={`text-white font-medium border-white border-[1px] rounded-md px-2 sm:px-4 py-1 sm:py-2 hover:translate-x-[-3px] hover:translate-y-[-3px] hover:shadow-[3px_3px_0px_rgba(255,255,255)] duration-200 ${
             elementsVisible[5]
               ? "translate-y-0 opacity-100"
               : "translate-y-[-30px] opacity-0"

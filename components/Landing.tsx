@@ -24,18 +24,18 @@ const Landing = () => {
 
   return (
     <div className="w-screen h-screen flex justify-center items-center z-20">
-      <div className="w-[1000px] flex flex-col justify-start gap-y-4">
+      <div className="w-[345px] sm:w-[600px] md:w-[800px] lg:w-[1000px] flex flex-col justify-start gap-y-4">
         <p
           className={`text-white ${
             elementsVisible[0]
               ? "translate-y-0 opacity-100"
               : "translate-y-[50px] opacity-0"
-          } text-md font-medium transition-all duration-500`}
+          } text-xs sm:text-sm md:text-md font-medium transition-all duration-500`}
         >
           Hi, my name is
         </p>
         <h1
-          className={`text-accent-hover text-7xl font-bold ${
+          className={`text-accent-hover text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold ${
             elementsVisible[1]
               ? "translate-y-0 opacity-100"
               : "translate-y-[50px] opacity-0"
@@ -44,7 +44,7 @@ const Landing = () => {
           Tae Lee.
         </h1>
         <h1
-          className={`text-accent text-7xl font-bold ${
+          className={`text-accent text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold ${
             elementsVisible[2]
               ? "translate-y-0 opacity-100"
               : "translate-y-[50px] opacity-0"
@@ -53,7 +53,7 @@ const Landing = () => {
           I Craft Web Experiences.
         </h1>
         <p
-          className={`w-3/5 text-accent font-medium ${
+          className={`md:w-4/5 lg:w-3/5 text-xs sm:text-sm md:text-md text-accent font-medium ${
             elementsVisible[3]
               ? "translate-y-0 opacity-100"
               : "translate-y-[50px] opacity-0"

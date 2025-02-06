@@ -88,17 +88,20 @@ const Projects: React.FC = () => {
   ];
 
   return (
-    <div id="projects" className="w-screen h-screen flex flex-col justify-center items-center">
+    <div
+      id="projects"
+      className="w-screen h-screen flex flex-col justify-center items-center"
+    >
       <motion.h1
         ref={ref1}
         initial={{ opacity: 0, y: 80 }}
         animate={{ opacity: isInView1 ? 1 : 0, y: isInView1 ? 0 : 80 }}
         transition={{ duration: 0.5 }}
-        className="w-[900px] flex text-2xl items-end gap-4 mb-10"
+        className="w-[230px] sm:w-[400px] md:w-[650px] lg:w-[900px] flex text-lg md:text-2xl items-end gap-4 mb-4 sm:mb-10"
       >
         03.
-        <span className="text-accent-hover w-fill text-3xl flex items-center font-bold gap-2">
-          Things I&apos;ve Built <p className="w-[275px] h-[2px] bg-accent"></p>
+        <span className="text-accent-hover w-fill text-xl md:text-3xl flex items-center font-bold gap-2">
+          Things I&apos;ve Built <p className="w-[0px] sm:w-[150px] md:w-[275px] h-[2px] bg-accent"></p>
         </span>
       </motion.h1>
       <motion.div
@@ -106,9 +109,9 @@ const Projects: React.FC = () => {
         initial={{ opacity: 0, y: 80 }}
         animate={{ opacity: isInView2 ? 1 : 0, y: isInView2 ? 0 : 80 }}
         transition={{ duration: 0.5 }}
-        className="w-[900px] flex text-2xl items-end gap-4 mb-10"
+        className="w-[200px] sm:w-[300px] md:w-[650px] lg:w-[900px] flex text-2xl justify-center items-end gap-4 mb-4 sm:mb-10"
       >
-        <Carousel className="w-[900px]">
+        <Carousel className="w-[650px] lg:w-[900px]">
           <CarouselContent>
             {projects.map((project) => (
               <CarouselItem
@@ -125,8 +128,8 @@ const Projects: React.FC = () => {
                   <CardContent className="flex flex-col justify-center items-center p-4 hover:border-accent-hover">
                     <Image
                       src={project.image}
-                      width={800}
-                      height={800}
+                      width={300}
+                      height={300}
                       alt={project.alt}
                       className="rounded-md aspect-square cursor-pointer"
                       onClick={() => setActiveProject(project.id)}
@@ -147,7 +150,7 @@ const Projects: React.FC = () => {
           initial={{ opacity: 0, y: 80 }}
           animate={{ opacity: isInView3 ? 1 : 0, y: isInView3 ? 0 : 80 }}
           transition={{ duration: 0.5 }}
-          className="w-[800px] h-[160px] flex flex-col"
+          className="w-[230px] sm:w-[300px] md:w-[600px] lg:w-[800px] h-[160px] flex flex-col"
         >
           <div className="flex">
             <a
