@@ -105,7 +105,7 @@ const Navbar: React.FC = () => {
               : "translate-y-[-30px] opacity-0"
           } transition-all duration-300`}
         >
-          <span className="text-white">03.</span> Work
+          <span className="text-white">03.</span> Projects
         </a>
         <a
           href=""

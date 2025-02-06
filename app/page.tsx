@@ -1,6 +1,7 @@
 import Landing from "@/components/Landing";
 import AboutMe from "@/components/AboutMe";
 import WorkHistory from "@/components/WorkHistory";
+import Projects from "@/components/Projects";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Landing />
       <AboutMe />
       <WorkHistory />
+      <Projects />
     </>
   );
 }
