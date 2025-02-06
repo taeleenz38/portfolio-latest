@@ -106,6 +106,12 @@ const Navbar: React.FC = () => {
           )
         )}
         <button
+          onClick={() =>
+            window.open(
+              "https://drive.google.com/uc?export=download&id=1n7uKLtd7YKQTKG3UEKFQ1Zsn3AVAHlp0",
+              "_blank"
+            )
+          }
           className={`text-white font-medium border-white border-[1px] rounded-md px-4 py-2 hover:translate-x-[-3px] hover:translate-y-[-3px] hover:shadow-[3px_3px_0px_rgba(255,255,255)] duration-200 ${
             elementsVisible[5]
               ? "translate-y-0 opacity-100"
