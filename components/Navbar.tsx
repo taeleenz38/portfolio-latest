@@ -109,7 +109,7 @@ const Navbar: React.FC = () => {
         <button
           onClick={() =>
             window.open(
-              "https://drive.google.com/uc?export=download&id=1n7uKLtd7YKQTKG3UEKFQ1Zsn3AVAHlp0",
+              "https://drive.google.com/uc?export=download&id=1s_3ABKuL6nBXgyUu22sZJ1sT9BVPEQc0",
               "_blank"
             )
           }
