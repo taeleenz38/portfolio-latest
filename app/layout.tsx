@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Lato } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import "./globals.css";
+import FloatingLinks from "@/components/FloatingLinks";
 
 const lato = Lato({
   weight: ["100", "300", "400", "700", "900"],
@@ -21,8 +22,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${lato.variable} antialiased font-medium overflow-x-hidden`}>
+      <body
+        className={`${lato.variable} antialiased font-medium overflow-x-hidden`}
+      >
         <Navbar />
+        <FloatingLinks />
         {children}
       </body>
     </html>
