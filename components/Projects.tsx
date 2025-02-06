@@ -88,11 +88,11 @@ const Projects: React.FC = () => {
   ];
 
   return (
-    <div className="w-screen h-screen flex flex-col justify-center items-center">
+    <div id="projects" className="w-screen h-screen flex flex-col justify-center items-center">
       <motion.h1
         ref={ref1}
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: isInView1 ? 1 : 0, y: isInView1 ? 0 : 40 }}
+        initial={{ opacity: 0, y: 80 }}
+        animate={{ opacity: isInView1 ? 1 : 0, y: isInView1 ? 0 : 80 }}
         transition={{ duration: 0.5 }}
         className="w-[900px] flex text-2xl items-end gap-4 mb-10"
       >
@@ -103,8 +103,8 @@ const Projects: React.FC = () => {
       </motion.h1>
       <motion.div
         ref={ref2}
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: isInView2 ? 1 : 0, y: isInView2 ? 0 : 40 }}
+        initial={{ opacity: 0, y: 80 }}
+        animate={{ opacity: isInView2 ? 1 : 0, y: isInView2 ? 0 : 80 }}
         transition={{ duration: 0.5 }}
         className="w-[900px] flex text-2xl items-end gap-4 mb-10"
       >
@@ -125,8 +125,8 @@ const Projects: React.FC = () => {
                   <CardContent className="flex flex-col justify-center items-center p-4 hover:border-accent-hover">
                     <Image
                       src={project.image}
-                      width={400}
-                      height={400}
+                      width={800}
+                      height={800}
                       alt={project.alt}
                       className="rounded-md aspect-square cursor-pointer"
                       onClick={() => setActiveProject(project.id)}
@@ -144,8 +144,8 @@ const Projects: React.FC = () => {
       {activeProject !== null && (
         <motion.div
           ref={ref3}
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: isInView3 ? 1 : 0, y: isInView3 ? 0 : 40 }}
+          initial={{ opacity: 0, y: 80 }}
+          animate={{ opacity: isInView3 ? 1 : 0, y: isInView3 ? 0 : 80 }}
           transition={{ duration: 0.5 }}
           className="w-[800px] h-[160px] flex flex-col"
         >

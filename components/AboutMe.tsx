@@ -18,7 +18,7 @@ const AboutMe = () => {
   const isInViewTech = useInView(refTech, { once: true });
 
   return (
-    <div className="w-screen h-screen flex justify-center items-center">
+    <div id="about" className="w-screen h-screen flex justify-center items-center">
       <div className="w-[900px] flex flex-col mx-auto gap-8">
         <h1 className="w-full flex text-2xl items-end gap-4">
           01.
@@ -30,8 +30,8 @@ const AboutMe = () => {
           <div className="w-[53%] flex-col text-accent">
             <motion.p
               ref={ref1}
-              initial={{ opacity: 0, y: 25 }}
-              animate={{ opacity: isInView1 ? 1 : 0, y: isInView1 ? 0 : 25 }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: isInView1 ? 1 : 0, y: isInView1 ? 0 : 50 }}
               transition={{ duration: 0.5 }}
               className="mb-4"
             >
@@ -42,8 +42,8 @@ const AboutMe = () => {
             </motion.p>
             <motion.p
               ref={ref2}
-              initial={{ opacity: 0, y: 25 }}
-              animate={{ opacity: isInView2 ? 1 : 0, y: isInView2 ? 0 : 25 }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: isInView2 ? 1 : 0, y: isInView2 ? 0 : 50 }}
               transition={{ duration: 0.5 }}
               className="mb-4"
             >
@@ -55,8 +55,8 @@ const AboutMe = () => {
             </motion.p>
             <motion.p
               ref={ref3}
-              initial={{ opacity: 0, y: 25 }}
-              animate={{ opacity: isInView3 ? 1 : 0, y: isInView3 ? 0 : 25 }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: isInView3 ? 1 : 0, y: isInView3 ? 0 : 50 }}
               transition={{ duration: 0.5 }}
               className="mb-4"
             >
@@ -73,10 +73,10 @@ const AboutMe = () => {
             </motion.p>
             <motion.p
               ref={refTech}
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 50 }}
               animate={{
                 opacity: isInViewTech ? 1 : 0,
-                y: isInViewTech ? 0 : 25,
+                y: isInViewTech ? 0 : 50,
               }}
               transition={{ duration: 0.5 }}
               className="font-extrabold mb-2 text-accent-hover"
@@ -84,10 +84,10 @@ const AboutMe = () => {
               Technologies / Tech Stack
             </motion.p>
             <motion.div
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 50 }}
               animate={{
                 opacity: isInViewTech ? 1 : 0,
-                y: isInViewTech ? 0 : 25,
+                y: isInViewTech ? 0 : 50,
               }}
               transition={{ duration: 0.5 }}
               className="grid grid-cols-3 text-sm font-light"

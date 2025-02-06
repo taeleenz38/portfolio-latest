@@ -56,6 +56,17 @@ const Navbar: React.FC = () => {
     });
   };
 
+  const handleSmoothScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    targetId: string
+  ) => {
+    e.preventDefault();
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <div
       ref={navRef}
@@ -77,52 +88,29 @@ const Navbar: React.FC = () => {
         />
       </Link>
       <div className="flex items-center gap-10 text-sm">
-        <a
-          href=""
-          className={`hover:text-secondary duration-150 font-medium ${
-            elementsVisible[1]
-              ? "translate-y-0 opacity-100"
-              : "translate-y-[-30px] opacity-0"
-          } transition-all duration-300`}
-        >
-          <span className="text-white">01.</span> About
-        </a>
-        <a
-          href=""
-          className={`hover:text-secondary duration-150 font-medium ${
-            elementsVisible[2]
-              ? "translate-y-0 opacity-100"
-              : "translate-y-[-30px] opacity-0"
-          } transition-all duration-300`}
-        >
-          <span className="text-white">02.</span> Experience
-        </a>
-        <a
-          href=""
-          className={`hover:text-secondary duration-150 font-medium ${
-            elementsVisible[3]
-              ? "translate-y-0 opacity-100"
-              : "translate-y-[-30px] opacity-0"
-          } transition-all duration-300`}
-        >
-          <span className="text-white">03.</span> Projects
-        </a>
-        <a
-          href=""
-          className={`hover:text-secondary duration-150 font-medium ${
-            elementsVisible[4]
-              ? "translate-y-0 opacity-100"
-              : "translate-y-[-30px] opacity-0"
-          } transition-all duration-300`}
-        >
-          <span className="text-white">04.</span> Contact
-        </a>
+        {["#about", "#experience", "#projects", "#contact"].map(
+          (href, index) => (
+            <a
+              key={href}
+              href={href}
+              onClick={(e) => handleSmoothScroll(e, href)}
+              className={`hover:text-secondary duration-150 font-medium ${
+                elementsVisible[index + 1]
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-[-30px] opacity-0"
+              } transition-all duration-200`}
+            >
+              <span className="text-white">{`0${index + 1}.`}</span>{" "}
+              {href.slice(1).charAt(0).toUpperCase() + href.slice(2)}
+            </a>
+          )
+        )}
         <button
-          className={`text-white font-medium border-white border-[1px] rounded-md px-4 py-2 hover:translate-x-[-3px] hover:translate-y-[-3px] hover:shadow-[3px_3px_0px_rgba(255,255,255)] duration-300 ${
+          className={`text-white font-medium border-white border-[1px] rounded-md px-4 py-2 hover:translate-x-[-3px] hover:translate-y-[-3px] hover:shadow-[3px_3px_0px_rgba(255,255,255)] duration-200 ${
             elementsVisible[5]
               ? "translate-y-0 opacity-100"
               : "translate-y-[-30px] opacity-0"
-          } transition-all duration-300`}
+          } transition-all duration-200`}
         >
           Resume
         </button>

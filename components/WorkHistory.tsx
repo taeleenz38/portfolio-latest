@@ -12,7 +12,7 @@ const WorkHistory = () => {
   const isInView2 = useInView(ref2, { once: true });
 
   return (
-    <div className="w-screen h-screen flex justify-center items-center">
+    <div id="experience" className="w-screen h-screen flex justify-center items-center">
       <div className="w-[700px] flex flex-col mx-auto">
         <h1 className="w-full flex text-2xl items-end gap-4 mb-10">
           02.
@@ -22,8 +22,8 @@ const WorkHistory = () => {
         </h1>
         <motion.div
           ref={ref1}
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: isInView1 ? 1 : 0, y: isInView1 ? 0 : 40 }}
+          initial={{ opacity: 0, y: 80 }}
+          animate={{ opacity: isInView1 ? 1 : 0, y: isInView1 ? 0 : 80 }}
           transition={{ duration: 0.5 }}
           className="w-5/6 border-accent hover:border-accent-hover duration-200 border-[2px] flex rounded-md p-4 text-accent overflow-hidden"
         >
@@ -74,8 +74,8 @@ const WorkHistory = () => {
         </motion.div>
         <motion.div
           ref={ref2}
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: isInView2 ? 1 : 0, y: isInView2 ? 0 : 40 }}
+          initial={{ opacity: 0, y: 80 }}
+          animate={{ opacity: isInView2 ? 1 : 0, y: isInView2 ? 0 : 80 }}
           transition={{ duration: 0.5 }}
           className="w-5/6 border-accent hover:border-accent-hover duration-200 border-[2px] flex rounded-md p-4 text-accent overflow-hidden mt-5"
         >
