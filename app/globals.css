@@ -22,7 +22,7 @@
     position: absolute;
     width: 0;
     height: 1px;
-    bottom: 5px;
+    bottom: 3px;
     left: 0;
     background-color: white; /* or any color you want for the underline */
     transition: width 0.3s ease-out;
