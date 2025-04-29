@@ -33,6 +33,19 @@ const Projects: React.FC = () => {
 
   const projects: Project[] = [
     {
+      id: "bm",
+      image: "/images/BM-square.png",
+      alt: "block majority",
+      title: "Block Majority",
+      year: "2025",
+      link: "https://www.blockmajority.io/",
+      description: [
+        "Revamped company website for Block Majority (Web3 company).",
+        "Responsive website compatible with multiple browsers and display sizes.",
+        "Built using Webflow and custom Javascript injections.",
+      ],
+    },
+    {
       id: "myriad",
       image: "/images/LEON.png",
       alt: "myriad industries",
@@ -101,7 +114,8 @@ const Projects: React.FC = () => {
       >
         03.
         <span className="text-accent-hover w-fill text-xl md:text-3xl flex items-center font-bold gap-2">
-          Things I&apos;ve Built <p className="w-[0px] sm:w-[150px] md:w-[275px] h-[2px] bg-accent"></p>
+          Things I&apos;ve Built{" "}
+          <p className="w-[0px] sm:w-[150px] md:w-[275px] h-[2px] bg-accent"></p>
         </span>
       </motion.h1>
       <motion.div
