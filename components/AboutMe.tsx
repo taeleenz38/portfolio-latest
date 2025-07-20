@@ -19,7 +19,7 @@ const AboutMe = () => {
 
   return (
     <div id="about" className="w-screen h-screen flex justify-center items-center">
-      <div className="w-[320px] sm:w-[500px] md:w-[900px] flex flex-col mx-auto gap-4 sm:gap-8">
+      <div className="w-[320px] sm:w-[500px] md:w-[1100px] flex flex-col mx-auto gap-4 sm:gap-8">
         <h1 className="w-full flex text-lg md:text-2xl items-end gap-4">
           01.
           <span className="text-accent-hover text-xl md:text-3xl flex items-center gap-2 font-bold">
@@ -112,10 +112,10 @@ const AboutMe = () => {
           <div className="sm:w-[350px] md:w-[38%] mx-auto md:mx-0 mt-1 h-fit rounded-md overflow-hidden hover:translate-x-[-6px] hover:translate-y-[-6px] hover:shadow-[6px_6px_0px_rgba(255,255,255)] duration-200 group">
             <Image
               src="/images/IMG_6593.JPG"
-              width={350}
-              height={350}
+              width={450}
+              height={450}
               alt="profile picture"
-              className="group-hover:brightness-80 transition-all duration-200"
+              className="group-hover:brightness-80 object-contain transition-all duration-200"
               style={{
                 filter:
                   "brightness(0.6) sepia(1) hue-rotate(130deg) saturate(4)",

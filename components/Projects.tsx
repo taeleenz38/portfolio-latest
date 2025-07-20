@@ -10,16 +10,7 @@ import {
 } from "@/components/ui/carousel";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
-
-interface Project {
-  id: string;
-  image: string;
-  alt: string;
-  title: string;
-  year: string;
-  link: string;
-  description: string[];
-}
+import { projects } from "./data/projectsData";
 
 const Projects: React.FC = () => {
   const [activeProject, setActiveProject] = useState<string>("myriad");
@@ -31,75 +22,6 @@ const Projects: React.FC = () => {
   const isInView2 = useInView(ref2, { once: true });
   const isInView3 = useInView(ref3, { once: true });
 
-  const projects: Project[] = [
-    {
-      id: "bm",
-      image: "/images/BM-square.png",
-      alt: "block majority",
-      title: "Block Majority",
-      year: "2025",
-      link: "https://www.blockmajority.io/",
-      description: [
-        "Revamped company website for Block Majority (Web3 company).",
-        "Responsive website compatible with multiple browsers and display sizes.",
-        "Built using Webflow and custom Javascript injections.",
-      ],
-    },
-    {
-      id: "myriad",
-      image: "/images/LEON.png",
-      alt: "myriad industries",
-      title: "Myriad Industries",
-      year: "2024",
-      link: "https://myriad-industries-leon.vercel.app/",
-      description: [
-        "A minimal portfolio website for Leon Koumouris (architect and university tutor).",
-        "Responsive website compatible with multiple browsers and display sizes.",
-        "Built using Cursor, Next.js, Javascript + Tailwind CSS",
-      ],
-    },
-    {
-      id: "dlabs",
-      image: "/images/DLABS.png",
-      alt: "delicious labs",
-      title: "Delicious Labs",
-      year: "2022",
-      link: "https://delicious-labs-sandy.vercel.app/",
-      description: [
-        "Main website for Delicious Labs, a Web3 collective.",
-        "Responsive website compatible with multiple browsers and display sizes.",
-        "Implements horizontal scrolling instead of the traditional scroll direction.",
-        "Built using VSCode, Next.js, Javascript + Tailwind CSS",
-      ],
-    },
-    {
-      id: "bored",
-      image: "/images/BORED.png",
-      alt: "bored token (memecoin)",
-      title: "Bored Token",
-      year: "2022",
-      link: "https://boredtoken-steel.vercel.app/",
-      description: [
-        "Official website for Bored Token - ERC20 token launched by flur.eth (founder of Flur Labs).",
-        "Responsive website compatible with multiple browsers and display sizes.",
-        "Built using VSCode, Next.js, Javascript + Tailwind CSS",
-      ],
-    },
-    {
-      id: "fttc",
-      image: "/images/FTTC.jpg",
-      alt: "fttc token (memecoin)",
-      title: "FTTC Token",
-      year: "2022",
-      link: "https://ftx-classic-amber.vercel.app/",
-      description: [
-        "Official website for FTX Classic - ERC20 token launched by flur.eth (founder of Flur Labs).",
-        "Responsive website compatible with multiple browsers and display sizes.",
-        "Built using VSCode, Next.js, Javascript + Tailwind CSS",
-      ],
-    },
-  ];
-
   return (
     <div
       id="projects"
@@ -110,7 +32,7 @@ const Projects: React.FC = () => {
         initial={{ opacity: 0, y: 80 }}
         animate={{ opacity: isInView1 ? 1 : 0, y: isInView1 ? 0 : 80 }}
         transition={{ duration: 0.5 }}
-        className="w-[230px] sm:w-[400px] md:w-[650px] lg:w-[900px] flex text-lg md:text-2xl items-end gap-4 mb-4 sm:mb-10"
+        className="w-[230px] sm:w-[400px] md:w-[650px] lg:w-[1100px] flex text-lg md:text-2xl items-end gap-4 mb-4 sm:mb-10"
       >
         03.
         <span className="text-accent-hover w-fill text-xl md:text-3xl flex items-center font-bold gap-2">
@@ -123,9 +45,9 @@ const Projects: React.FC = () => {
         initial={{ opacity: 0, y: 80 }}
         animate={{ opacity: isInView2 ? 1 : 0, y: isInView2 ? 0 : 80 }}
         transition={{ duration: 0.5 }}
-        className="w-[200px] sm:w-[300px] md:w-[650px] lg:w-[900px] flex text-2xl justify-center items-end gap-4 mb-4 sm:mb-10"
+        className="w-[200px] sm:w-[300px] md:w-[650px] lg:w-[1100px] flex text-2xl justify-center items-end gap-4 mb-4 sm:mb-10"
       >
-        <Carousel className="w-[650px] lg:w-[900px]">
+        <Carousel className="w-[650px] lg:w-full">
           <CarouselContent>
             {projects.map((project) => (
               <CarouselItem
@@ -133,7 +55,7 @@ const Projects: React.FC = () => {
                 className="md:basis-1/2 lg:basis-1/3"
               >
                 <Card
-                  className={`transition-colors duration-300 border-2 hover:border-accent-hover ${
+                  className={`transition-colors duration-300 border-2 p-4 hover:border-accent-hover ${
                     activeProject === project.id
                       ? "border-accent-hover"
                       : "border-white"
@@ -164,7 +86,7 @@ const Projects: React.FC = () => {
           initial={{ opacity: 0, y: 80 }}
           animate={{ opacity: isInView3 ? 1 : 0, y: isInView3 ? 0 : 80 }}
           transition={{ duration: 0.5 }}
-          className="w-[230px] sm:w-[300px] md:w-[600px] lg:w-[800px] h-[160px] flex flex-col"
+          className="w-[230px] sm:w-[300px] md:w-[600px] lg:w-[1100px] h-[160px] flex flex-col"
         >
           <div className="flex">
             <a

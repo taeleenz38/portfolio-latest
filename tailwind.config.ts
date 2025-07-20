@@ -14,9 +14,9 @@ export default {
     extend: {
       colors: {
         primary: "#131313",
-        secondary: "#DDEDAA",
+        secondary: "#C6E88A",
         accent: {
-          DEFAULT: "rgba(0, 193, 112, 0.6)",
+          DEFAULT: "rgba(0, 210, 130, 0.6)",
           hover: "#00eb96",
         },
         background: "var(--background)",

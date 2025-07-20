@@ -3,20 +3,70 @@ import React from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import workData, { WorkExperience } from "./data/workData";
+
+interface WorkExperienceItemProps {
+  work: WorkExperience;
+  index: number;
+}
+
+const WorkExperienceItem: React.FC<WorkExperienceItemProps> = ({
+  work,
+  index,
+}) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 80 }}
+      animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 80 }}
+      transition={{ duration: 0.5 }}
+      className={`w-5/6 h-2/5 border-white hover:border-accent-hover duration-200 border-[2px] flex sm:flex-row flex-col items-center rounded-md px-4 text-accent overflow-hidden ${
+        index > 0 ? "mt-5" : ""
+      }`}
+    >
+      <div className="w-1/4 flex justify-center items-center">
+        <Image
+          src={work.logo}
+          width={200}
+          height={200}
+          alt={`${work.company} logo`}
+          className="rounded-md object-cover"
+        />
+      </div>
+      <div className="w-3/4 flex flex-col px-4">
+        <p className="font-bold text-accent-hover text-sm mb-2 sm:mb-0 md:text-lg">
+          {work.role} @{" "}
+          <a
+            href={work.url}
+            target="_blank"
+            className="link-underline-grow text-white"
+          >
+            {work.company}
+          </a>
+        </p>
+        <p className="italic text-accent-hover text-sm mb-3 md:text-lg">
+          {work.duration}
+        </p>
+        <ul className="text-sm sm:flex flex-col gap-1 list-disc marker:text-accent-hover pl-4 hidden">
+          {work.responsibilities.map((responsibility, idx) => (
+            <li key={idx}>{responsibility}</li>
+          ))}
+        </ul>
+      </div>
+    </motion.div>
+  );
+};
 
 const WorkHistory = () => {
-  const ref1 = useRef(null);
-  const ref2 = useRef(null);
-
-  const isInView1 = useInView(ref1, { once: true });
-  const isInView2 = useInView(ref2, { once: true });
-
   return (
     <div
       id="experience"
       className="w-screen h-screen flex justify-center items-center"
     >
-      <div className="w-[300px] sm:w-[500px] md:w-[750px] flex flex-col mx-auto justify-center items-center">
+      <div className="w-[300px] sm:w-[500px] md:w-[1100px] h-5/6 flex flex-col mx-auto justify-center items-center">
         <h1 className="w-full flex text-lg md:text-2xl items-end gap-4 mb-4 sm:mb-10">
           02.
           <span className="text-accent-hover w-fill text-xl md:text-3xl flex items-center font-bold gap-2">
@@ -24,108 +74,9 @@ const WorkHistory = () => {
             <p className="w-[0px] sm:w-[150px] md:w-[275px] h-[2px] bg-accent"></p>
           </span>
         </h1>
-        <motion.div
-          ref={ref1}
-          initial={{ opacity: 0, y: 80 }}
-          animate={{ opacity: isInView1 ? 1 : 0, y: isInView1 ? 0 : 80 }}
-          transition={{ duration: 0.5 }}
-          className="w-5/6 border-accent hover:border-accent-hover duration-200 border-[2px] flex sm:flex-row flex-col items-center rounded-md p-4 text-accent overflow-hidden"
-        >
-          <div className="overflow-hidden">
-            <Image
-              src="/images/BM-LOGO.png"
-              width={130}
-              height={130}
-              alt="block majority logo"
-              className="rounded-md mb-2 sm:mb-0"
-            />
-          </div>
-          <div className="flex flex-col px-4">
-            <p className="font-bold text-accent-hover text-sm mb-2 sm:mb-0 md:text-lg">
-              Junior Software Engineer @{" "}
-              <a
-                href="https://blockmajority.io/"
-                target="_blank"
-                className="link-underline-grow text-white"
-              >
-                Block Majority
-              </a>
-            </p>
-            <p className="italic text-accent-hover text-sm md:text-lg">
-              August 2023 ~ present
-            </p>
-            <ul className="text-sm sm:flex flex-col gap-1 list-disc marker:text-accent-hover pl-4 hidden">
-              <li>
-                Smart contract development/deployment
-                (solidity/truffle/hardhat).
-              </li>
-              <li>
-                Produced responsive websites compatible with multiple browsers
-                and display sizes.
-              </li>
-              <li>
-                Optimized web applications for speed, scalability and security.
-              </li>
-              <li>
-                Collected, defined and translated user requirements into project
-                designs and implementation plans.
-              </li>
-              <li>
-                Took concepts, produced design mockups and prototypes to
-                strengthen designs, enhance user experiences and improve site
-                interactions.
-              </li>
-            </ul>
-          </div>
-        </motion.div>
-        <motion.div
-          ref={ref2}
-          initial={{ opacity: 0, y: 80 }}
-          animate={{ opacity: isInView2 ? 1 : 0, y: isInView2 ? 0 : 80 }}
-          transition={{ duration: 0.5 }}
-          className="w-5/6 border-accent hover:border-accent-hover duration-200 border-[2px] flex sm:flex-row flex-col items-center rounded-md p-4 text-accent overflow-hidden mt-5"
-        >
-          {" "}
-          <div className="overflow-hidden">
-            <Image
-              src="/images/FLURLABS-LOGO.png"
-              width={130}
-              height={130}
-              alt="flur labs logo"
-              className="rounded-md mb-2 sm:mb-0"
-            />
-          </div>
-          <div className="flex flex-col px-4">
-            <p className="font-bold text-accent-hover text-sm md:text-lg mb-2 sm:mb-0">
-              Front End Developer @{" "}
-              <a
-                href="https://x.com/FlurLabs"
-                target="_blank"
-                className="link-underline-grow text-white"
-              >
-                Flur Labs
-              </a>
-            </p>
-            <p className="italic text-accent-hover text-sm md:text-lg">
-              August 2022 ~ December 2022
-            </p>
-            <ul className="text-sm sm:flex flex-col gap-1 list-disc marker:text-accent-hover pl-4 hidden">
-              <li>Dapp development - predominantly frontend.</li>
-              <li>
-                Smart contract development/deployment (solidity/
-                truffle/hardhat).
-              </li>
-              <li>
-                Worked with in-house UI designers to translate figma designs
-                into frontend code.
-              </li>
-              <li>
-                Coded using Next.js, HTML, CSS and Javascript to develop
-                features for both mobile and desktop platforms.
-              </li>
-            </ul>
-          </div>
-        </motion.div>
+        {workData.map((work, index) => (
+          <WorkExperienceItem key={index} work={work} index={index} />
+        ))}
       </div>
     </div>
   );
