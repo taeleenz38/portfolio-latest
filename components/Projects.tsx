@@ -13,7 +13,7 @@ import { motion, useInView } from "framer-motion";
 import { projects } from "./data/projectsData";
 
 const Projects: React.FC = () => {
-  const [activeProject, setActiveProject] = useState<string>("myriad");
+  const [activeProject, setActiveProject] = useState<string>("aspx");
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const ref3 = useRef(null);
@@ -67,7 +67,7 @@ const Projects: React.FC = () => {
                       width={300}
                       height={300}
                       alt={project.alt}
-                      className="rounded-md aspect-square cursor-pointer"
+                      className="rounded-md aspect-square cursor-pointer object-contain"
                       onClick={() => setActiveProject(project.id)}
                     />
                   </CardContent>

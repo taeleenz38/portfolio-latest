@@ -10,6 +10,20 @@ interface Project {
 
 export const projects: Project[] = [
   {
+    id: "aspx",
+    image: "/images/aspx.png",
+    alt: "aspx group",
+    title: "ASPX GROUP",
+    year: "2025",
+    link: "https://aspx.vercel.app/",
+    description: [
+      "Company website for ASPX Group.",
+      "Responsive website compatible with multiple browsers and display sizes.",
+      "Built using Typescript, Next.js, and Tailwind CSS/shadcn.",
+      "Data is fetched from a database - Nest.js deployed on Render.",
+    ],
+  },
+  {
     id: "bm",
     image: "/images/BM-square.png",
     alt: "block majority",
@@ -77,4 +91,4 @@ export const projects: Project[] = [
   },
 ];
 
-export default projects
+export default projects;
