@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -7,6 +7,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  type CarouselApi,
 } from "@/components/ui/carousel";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
@@ -14,6 +15,7 @@ import { projects } from "./data/projectsData";
 
 const Projects: React.FC = () => {
   const [activeProject, setActiveProject] = useState<string>("aspx");
+  const [api, setApi] = useState<CarouselApi>();
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const ref3 = useRef(null);
@@ -21,6 +23,24 @@ const Projects: React.FC = () => {
   const isInView1 = useInView(ref1, { once: true });
   const isInView2 = useInView(ref2, { once: true });
   const isInView3 = useInView(ref3, { once: true });
+
+  // Listen to carousel slide changes and update activeProject
+  useEffect(() => {
+    if (!api) return;
+
+    const onSelect = () => {
+      const selectedIndex = api.selectedScrollSnap();
+      const selectedProject = projects[selectedIndex];
+      if (selectedProject) {
+        setActiveProject(selectedProject.id);
+      }
+    };
+
+    api.on("select", onSelect);
+    return () => {
+      api.off("select", onSelect);
+    };
+  }, [api]);
 
   return (
     <div
@@ -47,7 +67,7 @@ const Projects: React.FC = () => {
         transition={{ duration: 0.5 }}
         className="w-[200px] sm:w-[300px] md:w-[650px] lg:w-[1100px] flex text-2xl justify-center items-end gap-4 mb-4 sm:mb-10"
       >
-        <Carousel className="w-[650px] lg:w-full">
+        <Carousel className="w-[650px] lg:w-full" setApi={setApi}>
           <CarouselContent>
             {projects.map((project) => (
               <CarouselItem
@@ -75,8 +95,8 @@ const Projects: React.FC = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className="hidden sm:flex" />
+          <CarouselNext className="hidden sm:flex" />
         </Carousel>
       </motion.div>
 
@@ -86,9 +106,9 @@ const Projects: React.FC = () => {
           initial={{ opacity: 0, y: 80 }}
           animate={{ opacity: isInView3 ? 1 : 0, y: isInView3 ? 0 : 80 }}
           transition={{ duration: 0.5 }}
-          className="w-[230px] sm:w-[300px] md:w-[600px] lg:w-[1100px] h-[160px] flex flex-col"
+          className="w-[300px] md:w-[600px] lg:w-[1100px] h-[160px] flex flex-col"
         >
-          <div className="flex">
+          <div className="flex justify-center md:justify-start">
             <a
               href={projects.find((p) => p.id === activeProject)?.link || "#"}
               target="_blank"
@@ -100,7 +120,7 @@ const Projects: React.FC = () => {
               [{projects.find((p) => p.id === activeProject)?.year}]
             </span>
           </div>
-          <ul className="text-sm flex flex-col gap-1 list-disc marker:text-accent-hover pl-4">
+          <ul className="text-sm hidden sm:flex flex-col gap-1 list-disc marker:text-accent-hover md:pl-4">
             {projects
               .find((p) => p.id === activeProject)
               ?.description.map((desc, index) => (

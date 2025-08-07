@@ -35,10 +35,12 @@ const AboutMe = () => {
               transition={{ duration: 0.5 }}
               className="mb-4 hidden md:block"
             >
-              Hi, I&apos;m Tae and I specialize in crafting user-centered
-              websites with a focus on clean UX/UI. My journey into web
-              development began in 2018 when I was looking to create a platform
-              for my music instrumentals.
+              Hi, I&apos;m Tae—a full-stack developer passionate about building
+              intuitive digital experiences that bridge the gap between complex
+              technology and user-friendly interfaces. My journey started in 2018
+              when I dove into web development to create a platform for my music
+              instrumentals, discovering my love for crafting seamless user
+              experiences.
             </motion.p>
             <motion.p
               ref={ref2}
@@ -47,29 +49,31 @@ const AboutMe = () => {
               transition={{ duration: 0.5 }}
               className="mb-4 hidden md:block"
             >
-              By 2021, my curiosity had shifted towards the Web3 landscape,
-              exploring everything from NFTs to the wild world of memecoins.
-              I&apos;ve been particularly fascinated by the potential of
-              blockchain technology, especially in the tokenization of Real
-              World Assets (RWA).
+              Fast forward to 2021, and I found myself deep in the Web3
+              ecosystem—exploring DeFi protocols, NFT marketplaces, and the
+              fascinating world of blockchain infrastructure. This experience
+              taught me the importance of making complex blockchain interactions
+              feel as simple as traditional web applications.
             </motion.p>
             <motion.p
               ref={ref3}
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: isInView3 ? 1 : 0, y: isInView3 ? 0 : 50 }}
               transition={{ duration: 0.5 }}
-              className="mb-4 text-sm sm:text-lg"
+              className="mb-4 hidden md:block"
             >
-              My main focus these days is building blockchain solutions with
-              sleek UX/UI at{" "}
+              Today, I work as a front-end developer at{" "}
               <a
                 href="https://blockmajority.io/"
                 target="_blank"
                 className="link-underline-grow text-white"
               >
                 Block Majority
-              </a>{" "}
-              for a variety of clients.
+              </a>
+              , where I build user interfaces for blockchain applications that
+              prioritize both functionality and user experience. I specialize in
+              creating applications that make Web3 accessible to everyone, from
+              DeFi platforms to RWA tokenization systems.
             </motion.p>
             <motion.p
               ref={refTech}
@@ -93,20 +97,27 @@ const AboutMe = () => {
               className="grid grid-cols-3 text-sm font-light"
             >
               <ul className="">
-                <li className="mb-2">JavaScript (ES6+)</li>
+                <li className="mb-2">JavaScript</li>
                 <li className="mb-2">React</li>
-                <li>Node.js</li>
+                <li className="mb-2">Node.js</li>
+                <li>GraphQL</li>
               </ul>
               <ul className="">
                 <li className="mb-2">TypeScript</li>
                 <li className="mb-2">Next.js</li>
-                <li>Tailwind CSS</li>
-              </ul>
-              <ul className="">
                 <li className="mb-2">shadcn/ui</li>
-                <li className="mb-2">Solidity</li>
-                <li>Postgres</li>
+                <li>GitHub</li>
+
               </ul>
+                              <ul className="">
+                  <li className="mb-2">Tailwind CSS</li>
+                  <li className="mb-2">Solidity</li>
+                  <li className="mb-2">Postgres</li>
+                  <li>
+                    <span className="block sm:hidden">GCP</span>
+                    <span className="hidden sm:block">Google Cloud Platform</span>
+                  </li>
+                </ul>
             </motion.div>
           </div>
           <div className="sm:w-[350px] md:w-[38%] mx-auto md:mx-0 mt-1 h-fit rounded-md overflow-hidden hover:translate-x-[-6px] hover:translate-y-[-6px] hover:shadow-[6px_6px_0px_rgba(255,255,255)] duration-200 group">

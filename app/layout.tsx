@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Lato } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 import FloatingLinks from "@/components/FloatingLinks";
 
-const lato = Lato({
+const montserrat = Montserrat({
   weight: ["100", "300", "400", "700", "900"],
-  variable: "--font-lato",
+  variable: "--font-montserrat",
   subsets: ["latin"],
 });
 
@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${lato.variable} antialiased font-medium overflow-x-hidden`}
+        className={`${montserrat.variable} antialiased font-medium overflow-x-hidden`}
       >
         <Navbar />
         <FloatingLinks />

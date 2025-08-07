@@ -16,7 +16,7 @@ const Contact = () => {
   return (
     <div
       id="contact"
-      className="w-screen mt-24 mb-72 flex justify-center items-center"
+      className="w-screen h-dvh md:h-screen flex justify-center items-center"
     >
       <div className="w-[260px] sm:w-[400px] md:w-[600px] flex flex-col mx-auto justify-center items-center">
         <motion.h1
