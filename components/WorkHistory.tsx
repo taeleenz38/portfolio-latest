@@ -23,11 +23,11 @@ const WorkExperienceItem: React.FC<WorkExperienceItemProps> = ({
       initial={{ opacity: 0, y: 80 }}
       animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 80 }}
       transition={{ duration: 0.5 }}
-      className={`w-5/6 h-2/5 border-white hover:border-accent-hover duration-200 border-[2px] flex sm:flex-row flex-col items-center rounded-md px-4 text-accent overflow-hidden ${
+      className={`w-5/6 md:h-2/5 p-4 md:p-0 border-white hover:border-accent-hover duration-200 border-[2px] flex sm:flex-row flex-col items-center justify-center md:justify-start rounded-md px-4 text-accent overflow-hidden ${
         index > 0 ? "mt-5" : ""
       }`}
     >
-      <div className="w-1/4 flex justify-center items-center">
+      <div className="w-1/2 md:w-1/4 flex justify-center items-center mb-6 md:mb-0">
         <Image
           src={work.logo}
           width={200}
@@ -36,7 +36,7 @@ const WorkExperienceItem: React.FC<WorkExperienceItemProps> = ({
           className="rounded-md object-cover"
         />
       </div>
-      <div className="w-3/4 flex flex-col px-4">
+      <div className="w-full md:w-3/4 flex flex-col px-4">
         <p className="font-bold text-accent-hover text-sm mb-2 sm:mb-0 md:text-lg">
           {work.role} @{" "}
           <a
